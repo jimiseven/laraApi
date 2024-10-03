@@ -22,5 +22,5 @@ Route::delete('/students/{id}', [studentController::class, 'destroy']);
 // });
 
 // Route::get('/students/{id}', function(){
-//     return "Obteniendo un estudiante";
+//     return "Obteniendo un estudiante"; modificacion 9.20
 // });
