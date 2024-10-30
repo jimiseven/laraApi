@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Student;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class studentController extends Controller
 {
@@ -36,7 +36,7 @@ class studentController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|unique:student',
             'phone' => 'required|digits:10',
-            'language' => 'required'
+            'language' => 'required|in:English,Spanish,French'
         ]);
 
         if ($validator->fails()) {
@@ -130,7 +130,7 @@ class studentController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|unique:student',
             'phone' => 'required|digits:10',
-            'language' => 'required'
+            'language' => 'required|in:English,Spanish,French'
         ]);
 
         if ($validator->fails()) {
@@ -175,7 +175,7 @@ class studentController extends Controller
             'name' => 'max:255',
             'email' => 'email|unique:student',
             'phone' => 'digits:10',
-            'language' => ''
+            'language' => 'in:English,Spanish,French'
         ]);
 
         if ($validator->fails()) {
@@ -213,4 +213,5 @@ class studentController extends Controller
 
         return response()->json($data, 200);
     }
+
 }
